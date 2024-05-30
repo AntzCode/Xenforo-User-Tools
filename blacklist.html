@@ -21,16 +21,25 @@
       <h1>XF User Tools - Settings</h1>
     </header>
 
+    <div class="blocking-status"><div id="toggle-blocking-mode" title="Click to Change"></div></div>
+
+    <div class="main-nav">
+        <ul>
+            <li class="current"><a href="blacklist.html">Blacklist</a></li>
+            <li><a href="whitelist.html">Whitelist</a></li>
+        </ul>
+    </div>
+
     <main class="page-main">
 
       <form name="options">
 
         <div class="form-field mode">
-          <label for="blocked-users">Blocked Users</label>
+          <label>Blocked Users</label>
           <p>This will remove any content from the blocked users so you will not be able to see it. The content will
             still be visible to other members though.</p>
           <p>Enter the username of the member whose content you do not want to see:</p>
-          <table id="blocked-users"></table>
+          <table id="blocked-users" class="usernames-table"></table>
         </div>
 
       </form>

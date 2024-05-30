@@ -5,14 +5,14 @@
     "name": "__MSG_appName__",
     "description": "__MSG_appDesc__",
     "version": "1.0.1",
-    "options_page": "options.html",
+    "options_page": "blacklist.html",
     "icons": {
         "16": "icon-16.png",
         "48": "icon-48.png",
         "128": "icon-128.png"
     },
     "action": {
-        "default_popup": "options.html"
+        "default_popup": "blacklist.html"
     },
     "permissions": [
         "storage"

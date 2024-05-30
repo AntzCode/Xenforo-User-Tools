@@ -62,7 +62,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 
 chrome.runtime.onInstalled.addListener(function () {
   chrome.storage.sync.set({ disabledDomains: [] });
-  chrome.storage.sync.set({ SettingsService: { blockedUsers: [] } });
+  chrome.storage.sync.set({ SettingsService: { blockedUsers: [], approvedUsers: [], blockingMode: 'blacklist' } });
 });
 
 XFUTBackgroundApp.init();
