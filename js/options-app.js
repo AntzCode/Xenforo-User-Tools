@@ -24,11 +24,11 @@ var XFUTOptionsApp = {
 
     jQuery('#blocked-users').html('');
 
-    jQuery.each(XFUTOptionsApp.SettingsService.blockedUsers, function (index, username) {
+    jQuery.each(XFUTOptionsApp.SettingsService.blockedUsers, async function (index, username) {
       var tr = jQuery('<tr />');
       var unTD = jQuery('<td />').text(username);
       var delImg = jQuery('<img class="delete-button" alt="Delete" title="Unblock User" />')
-        .prop('src', chrome.extension.getURL('/images/site/trash-icon.png'))
+        .prop('src', chrome.runtime.getURL('/images/site/trash-icon.png'))
         .prop('width', '24').prop('height', '24')
         .data('username', username);
       var delTD = jQuery('<td class="action delete" />').append(delImg);
@@ -44,6 +44,7 @@ var XFUTOptionsApp = {
     var addTD = jQuery('<td class="action add" />').append(addBtn);
     tr.append(unTD).append(addTD);
     jQuery('#blocked-users').append(tr);
+
   },
 
   addBlockedUser: function (username) {

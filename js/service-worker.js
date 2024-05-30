@@ -1,4 +1,3 @@
-
 /**
  * XFUTBackgroundApp - define background actions
  */
@@ -45,7 +44,6 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-
 
   if (typeof (tab.url) === 'string') {
     if (tab.highlighted) {
