@@ -1,79 +1,81 @@
+/**
+ * XFUTTranslate - Translate the Plugin
+ */
 var XFUTTranslate = {
-  
-  defaultLocale : 'en_GB',
-  locale : 'en_GB',
-  
-  setLocale : function(locale){
+
+  defaultLocale: 'en_GB',
+  locale: 'en_GB',
+
+  setLocale: function (locale) {
     this.locale = locale.replace('-', '_');
   },
-  
-  changeLocale : function(locale){
+
+  changeLocale: function (locale) {
     this.setLocale(locale);
-    
+
     XFUTTranslate.translateEl(document.getElementsByTagName('title')[0].childNodes[0]);
-    
+
     var allTextNodes = STGetTextNodesIn(document.body);
-    for(var i in allTextNodes){
+    for (var i in allTextNodes) {
       XFUTTranslate.translateEl(allTextNodes[i]);
     }
-    
+
   },
-  
-  translateEl : function(el, localeOverride){
-    
-    if(el.nodeValue !== null){
+
+  translateEl: function (el, localeOverride) {
+
+    if (el.nodeValue !== null) {
       // it is a translatable element 
-      
-      if(typeof el.stTranslate === 'undefined'){
+
+      if (typeof el.stTranslate === 'undefined') {
         // initiate element for first use
         el.stTranslate = 'sys';
         el.stTranslateSys = el.nodeValue;
       }
-      
-      if(!XFUTTranslations[el.stTranslateSys]){
+
+      if (!XFUTTranslations[el.stTranslateSys]) {
         // worst-case scenario - no translations are available for this element
         el.nodeValue = el.stTranslateSys;
         //alert('worst case! '+el.stTranslateSys+' - '+el.nodeValue+' - '+el.tagName);
         return;
       }
-      
-      if(typeof(localeOverride) !== 'undefined'){
-        
-        if(typeof XFUTTranslations[el.stTranslateSys][localeOverride] === 'undefined'){
+
+      if (typeof (localeOverride) !== 'undefined') {
+
+        if (typeof XFUTTranslations[el.stTranslateSys][localeOverride] === 'undefined') {
           // no translations available for this element in the specified locale, fall back to system value
           el.nodeValue = el.stTranslateSys;
           el.stTranslate = 'sys';
           return;
-        }else{
+        } else {
           // translate the element to the specified locale
           el.nodeValue = XFUTTranslations[el.stTranslateSys][localeOverride];
           el.stTranslate = localeOverride;
         }
 
-      }else{
+      } else {
         // send the element to be processed with a specified locale of the user's current setting
-        if(!XFUTTranslations[el.stTranslateSys][this.locale]){
+        if (!XFUTTranslations[el.stTranslateSys][this.locale]) {
           // no translations available for the user's locale, fall back to default locale
           return this.translateEl(el, this.defaultLocale);
-        }else{
+        } else {
           el.nodeValue = XFUTTranslations[el.stTranslateSys][this.locale];
           el.stTranslate = this.locale;
         }
       }
     }
   }
-  
+
 };
 
-
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   var language;
-  if(window.navigator.languages){
+  if (window.navigator.languages) {
     language = window.navigator.languages[0];
-  }else{
+  } else {
     language = window.navigator.userLanguage || window.navigator.language;
   }
-  setTimeout(function(){
+  setTimeout(function () {
     XFUTTranslate.changeLocale(language);
   }, 0);
 }, false);
