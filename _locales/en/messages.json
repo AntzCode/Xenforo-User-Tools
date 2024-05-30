@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Xenforo User Tools",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "A browser plugin to provide extended features for websites that are running the Xenforo forums software", 
+    "description":"The description of the application, displayed in the web store."
+  }
+}

@@ -1,0 +1,124 @@
+body.tools, body.index, body.acknowledgements{
+    overflow: hidden;
+}
+
+
+
+
+
+.page.options .tab-menu{
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.page.options .tab-menu li{
+    float: left;
+    margin: 0 0.4em 0 0;
+    padding: 0.2em 0.8em;
+    width: 10em;
+    border-bottom: none;
+    border-radius: 0.5em 0.5em 0 0;
+    background: none;
+    list-style-type: none;
+    background: rgba(230, 230, 230, 0.7);
+}
+
+.page.options .tab-menu li.active, .page.options .tab-menu li:hover{
+    background: rgba(255, 255, 255, 0.7);
+    position: relative;
+}
+.page.options .tab-menu li, .page.options .tab-menu li label{
+    cursor: pointer;
+}
+
+.page.options .tab-content{
+    border-radius: 0 0.5em 0.5em 0.5em;
+    background: rgba(255, 255, 255, 0.7);
+    clear: left;
+    padding: 0.8em;
+    display: none;
+}
+.page.options .tab-content.active{
+    display: block;
+}
+.page.options pre.legend{
+    font-size: 0.8em;
+    margin-left: 16em;
+    background: white;
+    padding: 1em;
+    width: 50em;
+    border: solid 3px rgba(21,21,119,1);
+    border-radius: 0.6em;
+}
+
+
+.page.options label[for=blocked-users]{
+    width: auto;
+}
+
+.page.options #blocked-users{
+    border-collapse: collapse;
+}
+
+.page.options #blocked-users tr:first-child{
+    border-top: dashed 2px #999;
+}
+
+.page.options #blocked-users tr{
+    background: #CCCCCC;
+    border-bottom: dashed 2px #999;
+    border-left: dashed 2px #999;
+    border-right: dashed 2px #999;
+}
+
+.page.options #blocked-users tr:nth-child(odd){
+    background: #DDDDDD;
+}
+
+.page.options #blocked-users td{
+    padding: 2px 6px;
+}
+
+.page.options #blocked-users td input[type=text]{
+    border-radius: 0;
+}
+
+.page.options #blocked-users td.action{
+    text-align: center;
+}
+
+.page.index main{
+    position: relative;
+    padding-bottom: 2em;
+}
+.page.options #blocked-users td.action.delete img{
+    cursor: pointer;
+}
+.page.index #tipDisableDomainSelector{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -44px;
+    width: 100%;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+
+.page.index #openSettingsPageLink{
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-decoration: underline;
+    color: rgba(21,21,119,1);
+}
+
+.page.index #acknowledgementsPageLink{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: rgba(21,21,119,1);
+}
