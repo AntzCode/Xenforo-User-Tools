@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>XF User Tools - Settings</title>
+  <meta charset="UTF-8">
+  <script src="js/content-scripts/jquery-3.4.1.min.js"></script>
+  <script src="js/options-app.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/translate-ui.js"></script>
+
+  <link href="css/global.css" rel="stylesheet" />
+  <link href="css/form.css" rel="stylesheet" />
+  <link href="css/page-styles.css" rel="stylesheet" />
+</head>
+
+<body class="options">
+  <div class="page options">
+
+    <header class="page-header">
+      <h1>XF User Tools - Settings</h1>
+    </header>
+
+    <div class="blocking-status"><div id="toggle-blocking-mode" title="Click to Change"></div></div>
+
+    <div class="main-nav">
+        <ul>
+            <li><a href="blacklist.html">Blacklist</a></li>
+            <li class="current"><a href="whitelist.html">Whitelist</a></li>
+        </ul>
+    </div>
+
+    <main class="page-main">
+
+      <form name="options">
+
+        <div class="form-field mode">
+          <label>Approved Users</label>
+          <p>This will remove any content that is not from the selected users so you will only be able to see what your favourite authors are saying. The content will
+            still be visible to other members though.</p>
+          <p>Enter the username of a member whose content you only want to see:</p>
+          <table id="approved-users" class="usernames-table"></table>
+        </div>
+
+      </form>
+
+    </main>
+
+    <footer class="page-footer">
+      &copy; <a href="https://www.AntzCode.com" target="_blank">www.AntzCode.com</a>
+    </footer>
+
+  </div>
+</body>
+
+</html>

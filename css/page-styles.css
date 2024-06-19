@@ -2,16 +2,13 @@ body.tools, body.index, body.acknowledgements{
     overflow: hidden;
 }
 
-
-
-
-
 .page.options .tab-menu{
     float: left;
     margin: 0;
     padding: 0;
     width: 100%;
 }
+
 .page.options .tab-menu li{
     float: left;
     margin: 0 0.4em 0 0;
@@ -28,6 +25,7 @@ body.tools, body.index, body.acknowledgements{
     background: rgba(255, 255, 255, 0.7);
     position: relative;
 }
+
 .page.options .tab-menu li, .page.options .tab-menu li label{
     cursor: pointer;
 }
@@ -39,9 +37,11 @@ body.tools, body.index, body.acknowledgements{
     padding: 0.8em;
     display: none;
 }
+
 .page.options .tab-content.active{
     display: block;
 }
+
 .page.options pre.legend{
     font-size: 0.8em;
     margin-left: 16em;
@@ -52,39 +52,38 @@ body.tools, body.index, body.acknowledgements{
     border-radius: 0.6em;
 }
 
-
 .page.options label[for=blocked-users]{
     width: auto;
 }
 
-.page.options #blocked-users{
+.page.options .usernames-table{
     border-collapse: collapse;
 }
 
-.page.options #blocked-users tr:first-child{
+.page.options .usernames-table tr:first-child{
     border-top: dashed 2px #999;
 }
 
-.page.options #blocked-users tr{
+.page.options .usernames-table tr{
     background: #CCCCCC;
     border-bottom: dashed 2px #999;
     border-left: dashed 2px #999;
     border-right: dashed 2px #999;
 }
 
-.page.options #blocked-users tr:nth-child(odd){
+.page.options .usernames-table tr:nth-child(odd){
     background: #DDDDDD;
 }
 
-.page.options #blocked-users td{
+.page.options .usernames-table td{
     padding: 2px 6px;
 }
 
-.page.options #blocked-users td input[type=text]{
+.page.options .usernames-table td input[type=text]{
     border-radius: 0;
 }
 
-.page.options #blocked-users td.action{
+.page.options .usernames-table td.action{
     text-align: center;
 }
 
@@ -92,9 +91,11 @@ body.tools, body.index, body.acknowledgements{
     position: relative;
     padding-bottom: 2em;
 }
-.page.options #blocked-users td.action.delete img{
+
+.page.options .usernames-table td.action.delete img{
     cursor: pointer;
 }
+
 .page.index #tipDisableDomainSelector{
     display: none;
     position: absolute;
@@ -121,4 +122,36 @@ body.tools, body.index, body.acknowledgements{
     right: 0;
     bottom: 0;
     color: rgba(21,21,119,1);
+}
+
+.page.options .blocking-status {
+    margin: 0;
+    padding: 1em 3.5em 0 3.5em;
+    text-align: right;
+}
+
+.page.options #toggle-blocking-mode {
+    background-color: lightgray;
+    border: solid 1px gray;
+    color: gray;
+    cursor: pointer;
+    padding: 0.5em;
+    display: inline-block;
+    border-radius: 1em;
+}
+
+.page.options #toggle-blocking-mode.blacklist {
+    background-color: red;
+    color: white;
+}
+
+.page.options #toggle-blocking-mode:hover {
+    position: relative;
+    left: -0.125em;
+    top: -0.125em;
+}
+
+.page.options #toggle-blocking-mode.whitelist {
+    background-color: green;
+    color: white;
 }
